@@ -63,3 +63,27 @@ gem 'simple_form'
 gem 'bullet', group: [:development, :test]
 gem 'factory_bot_rails', group: [:development, :test]
 gem 'delayed_job_active_record'
+
+## app specific gems
+# backend
+gem 'rails_admin', '~> 1.4', '>= 1.4.2'
+gem 'paper_trail', '~> 10.0', '>= 10.0.1'
+
+# authentication
+gem 'devise', '~> 4.5'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
+
+# authorization
+gem 'cancancan', '~> 1.13', '>= 1.13.1'
+
+# asset upload
+gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+gem 'rmagick', '~> 2.16'
+
+# scheduling
+gem 'ice_cube', '~> 0.16.3'
+
+

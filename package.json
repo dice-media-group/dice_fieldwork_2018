@@ -1,0 +1,7 @@
+{
+  "name": "dice_fieldwork_2018",
+  "private": true,
+  "dependencies": {
+    "normalize.css": "^8.0.0"
+  }
+}

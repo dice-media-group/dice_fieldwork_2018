@@ -88,3 +88,5 @@ gem 'rmagick', '~> 2.16'
 gem 'ice_cube', '~> 0.16.3'
 
 
+# frontend
+gem 'bootstrap', '~> 4.1.3'

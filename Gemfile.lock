@@ -209,6 +209,7 @@ GEM
     paper_trail (10.0.1)
       activerecord (>= 4.2, < 5.3)
       request_store (~> 1.1)
+    paper_trail-association_tracking (1.0.0)
     pg (0.21.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -400,6 +401,7 @@ DEPENDENCIES
   omniauth-linkedin
   omniauth-twitter
   paper_trail (~> 10.0, >= 10.0.1)
+  paper_trail-association_tracking (~> 1.0)
   pg (~> 0.18)
   pry-byebug
   pry-rails

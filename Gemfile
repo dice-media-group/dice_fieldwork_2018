@@ -68,6 +68,7 @@ gem 'delayed_job_active_record'
 # backend
 gem 'rails_admin', '~> 1.4', '>= 1.4.2'
 gem 'paper_trail', '~> 10.0', '>= 10.0.1'
+gem 'paper_trail-association_tracking', '~> 1.0'
 
 # authentication
 gem 'devise', '~> 4.5'

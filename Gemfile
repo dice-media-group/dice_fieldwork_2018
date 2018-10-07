@@ -37,6 +37,10 @@ group :development, :test do
   gem "dotenv-rails"
   gem "pry-byebug"
   gem "pry-rails"
+  ## app specific
+  gem 'guard'
+  gem 'guard-bundler', '~> 2.1'
+  gem 'travis', '~> 1.8', '>= 1.8.9'
 end
 
 group :test do

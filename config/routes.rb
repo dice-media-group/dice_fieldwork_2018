@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :accounts
   devise_for :users
   resources :services, :orders, :line_items, :carts, :consultations
 

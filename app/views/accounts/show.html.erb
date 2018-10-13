@@ -1,64 +1,113 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+    <div class="col-md-4">
+        <div class="row">
+            <h1 id="full_name"><%= @account.name.to_s %></h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <p>
+                  <b>Email:</b>
+                  <%= @account.email %>
+                </p>
+    
+                <p>
+                  <b>Phone number:</b>
+                  <%= @account.primary_phone_number %>
+                </p>
+    
+                  <p>
+                    <b>Alternate phone number:</b>
+                  <%= @account.secondary_phone_number %>
+                  </p>
+    
+                <p>
+                  <b>Service address:</b>
+                  <%= @account.return_service_location(@account.id).return_postal_format %>
+                </p>
+    
+                <p>
+                  <b>Billing address:</b>
+                  <%= @account.return_billing_location(@account.id).return_postal_format %>
+                </p>
+    
+                <!-- <p>
+                  <b>Initial charge:</b>
+                  $20.00
+                </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @account.first_name %>
-</p>
+                <p>
+                  <b>Recurring charge:</b>
+                  $33.00 (monthly)
+                </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @account.last_name %>
-</p>
+                <p>
+                  <b>First recurring charge:</b>
+                  09/04/2015
+                </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @account.email %>
-</p>
+                <p>
+                  <b>Payment method:</b>
+                  Credit Card
+                </p>
 
-<p>
-  <strong>no_customer_email_address:</strong>
-  <%= @account.no_customer_email_address %>
-</p>
-
-<p>
-  <strong>Primary phone number:</strong>
-  <%= @account.primary_phone_number %>
-</p>
-
-<p>
-  <strong>Secondary phone number:</strong>
-  <%= @account.secondary_phone_number %>
-</p>
-
-<p>
-  <strong>Mobile phone:</strong>
-  <%= @account.mobile_phone %>
-</p>
-
-<p>
-  <strong>Fax:</strong>
-  <%= @account.fax %>
-</p>
-
-<p>
-  <strong>is_business:</strong>
-  <%= @account.is_business %>
-</p>
-
-<p>
-  <strong>Referral source:</strong>
-  <%= @account.referral_source %>
-</p>
-
-<p>
-  <strong>Company name:</strong>
-  <%= @account.company_name %>
-</p>
-
-<p>
-  <strong>Account ref number:</strong>
-  <%= @account.account_ref_number %>
-</p>
-
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+                <p>
+                  <b>Sold by:</b>
+                  Colton Stevens
+                </p> -->
+    
+                <!-- <p>
+                  <b>Entered by:</b>
+                  Colton Stevens
+                </p> -->
+    
+                <p>
+                  <b>Sold on:</b>
+                  <%= @account.local_genesis %>
+                  
+                </p>
+    
+    
+              </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="row">
+            <%= link_to "Edit account", edit_account_path(@account) %> | 
+            <% if @agreement %>
+                <%= link_to "View service agreement", service_agreement_path(@agreement) %> 
+            <% else %>
+                <%= link_to "Create service agreement", new_account_service_agreement_path(@account) %>
+            <% end %>
+            | <%= link_to "Back to accounts", accounts_path %>
+        </div>
+        <div class="row">
+            <fieldset>
+                <legend>Service Consultations</legend>
+                  <table class="index_list">
+                    <tbody><tr>
+                      <th>When</th>
+                      <th>Service Route</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                    <% @account.consultations.each do |consult| %>
+                      <tr class="g">
+                        <td style="padding:0 15px 0 15px;">
+                            <!-- <a href="/appointments?date=2015-08-05&amp;service_route=79"><%= consult.get_start %></a> -->
+                            <%= link_to consult.get_start, consultation_path(consult) %>
+                        </td>
+                        <td style="padding:0 15px 0 15px;">
+                            <%= link_to "Serviced by #{consult.user.email}", consultation_path(consult) %>
+                            <!-- <a href="/reports/appointment/20189" target="_blank">Serviced by Blake Pharis</a></td> -->
+                        <td style="padding:0 15px 0 15px;">
+                          <!-- Finished -->
+                        </td>
+                        <td class="record_actions">
+                        </td>
+                      </tr>
+                    <% end %>
+                  </tbody></table>
+              </fieldset>
+        </div>
+    </div>
+</div>

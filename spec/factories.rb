@@ -1,4 +1,23 @@
 FactoryBot.define do
+  factory :consultation do
+    user { nil }
+    account { nil }
+  end
+  factory :address do
+    street_one { "MyString" }
+    street_two { "MyString" }
+    city { "MyString" }
+    state { "MyString" }
+    postal_code { "MyString" }
+    is_billing { false }
+    addressable { nil }
+  end
+  factory :geo_location do
+    
+  end
+  factory :default_address do
+    
+  end
   factory :account do
     first_name { "MyString" }
     last_name { "MyString" }

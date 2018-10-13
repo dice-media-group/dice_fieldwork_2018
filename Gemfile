@@ -37,6 +37,10 @@ group :development, :test do
   gem "dotenv-rails"
   gem "pry-byebug"
   gem "pry-rails"
+  ## app specific
+  gem 'guard'
+  gem 'guard-bundler', '~> 2.1'
+  gem 'travis', '~> 1.8', '>= 1.8.9'
 end
 
 group :test do
@@ -88,3 +92,5 @@ gem 'rmagick', '~> 2.16'
 gem 'ice_cube', '~> 0.16.3'
 
 
+# frontend
+gem 'bootstrap', '~> 4.1.3'

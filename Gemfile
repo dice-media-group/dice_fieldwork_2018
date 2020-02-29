@@ -75,7 +75,7 @@ gem 'paper_trail', '~> 10.0', '>= 10.0.1'
 gem 'paper_trail-association_tracking', '~> 1.0'
 
 # authentication
-gem 'devise', '~> 4.5'
+gem 'devise', '~> 4.7'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'

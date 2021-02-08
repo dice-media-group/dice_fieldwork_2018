@@ -85,7 +85,7 @@ gem 'omniauth-linkedin'
 gem 'cancancan', '~> 1.13', '>= 1.13.1'
 
 # asset upload
-gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+gem 'carrierwave', '~> 1.3'
 gem 'rmagick', '~> 2.16'
 
 # scheduling
